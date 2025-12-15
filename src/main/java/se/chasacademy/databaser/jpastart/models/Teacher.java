@@ -9,25 +9,28 @@ import java.util.List;
 public class Teacher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "name")
     private String name;
     @Column(name = "email")
     private String email;
 
-    // listan av kurser i konstruktorn?
-    public Teacher(int id, String name, String email) {
-        this.id = id;
+    @OneToMany(mappedBy = "teacher")
+    private List<Course> courses = new ArrayList<>();
+
+    public Teacher() {}
+
+    public Teacher( String name, String email) {
         this.name = name;
         this.email = email;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
