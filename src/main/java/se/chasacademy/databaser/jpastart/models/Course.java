@@ -16,6 +16,10 @@ public class Course {
     @Column(name = "CourseCode")
     private String courseCode;
 
+    @ManyToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
+
     private List<Student> students = new ArrayList();
 
     public Course() {}
@@ -56,4 +60,13 @@ public class Course {
     public void setStudents(List<Student> students) {
         this.students = students;
     }
+
+    public Teacher getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
+    }
+
 }

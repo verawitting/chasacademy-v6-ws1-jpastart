@@ -29,6 +29,10 @@ public class TestDataConfig {
           Course spring = new Course("Spring", "SPRING101");
           Course js = new Course("JavaScript", "JS101");
 
+          java.setTeacher(anna);
+          spring.setTeacher(bengt);
+          js.setTeacher(anna);
+
           courseRepo.save(java);
           courseRepo.save(spring);
           courseRepo.save(js);
