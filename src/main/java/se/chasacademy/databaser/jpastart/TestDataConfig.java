@@ -19,24 +19,24 @@ public class TestDataConfig {
             CourseRepository courseRepo
     ){
         return args -> {
-          Teacher anna  = new Teacher (1, "Anna Svensson", "anna@chas.se");
-          Teacher bengt = new Teacher (2, "Bengt Andersson", "bengt@chas.se");
+          Teacher anna  = new Teacher ("Anna Svensson", "anna@chas.se");
+          Teacher bengt = new Teacher ("Bengt Andersson", "bengt@chas.se");
 
           teacherRepo.save(anna);
           teacherRepo.save(bengt);
 
-          Course java = new Course(1, "Java", "JAVA101");
-          Course spring = new Course(2, "Spring", "SPRING101");
-          Course js = new Course(3, "JavaScript", "JS101");
+          Course java = new Course("Java", "JAVA101");
+          Course spring = new Course("Spring", "SPRING101");
+          Course js = new Course("JavaScript", "JS101");
 
           courseRepo.save(java);
           courseRepo.save(spring);
           courseRepo.save(js);
 
-          Student sara = new Student(1, "Sara Malm", "s.sara@chas.se");
-          Student lars = new Student(2, "Lars Lind", "s.lars@chas.se");
-          Student elfo = new Student(3, "Elf O", "s.elfo@chas.se");
-          Student elsa = new Student(4, "Elsa Svensson", "s.elsa@chas.se");
+          Student sara = new Student("Sara Malm", "s.sara@chas.se");
+          Student lars = new Student("Lars Lind", "s.lars@chas.se");
+          Student elfo = new Student("Elf O", "s.elfo@chas.se");
+          Student elsa = new Student("Elsa Svensson", "s.elsa@chas.se");
 
           studentRepo.save(sara);
           studentRepo.save(lars);
