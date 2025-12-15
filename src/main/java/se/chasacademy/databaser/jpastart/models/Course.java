@@ -9,7 +9,7 @@ import java.util.List;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
     @Column(name = "title")
     private String title;
@@ -18,17 +18,18 @@ public class Course {
 
     private List<Student> students = new ArrayList();
 
-    public Course(int id, String title, String courseCode) {
-        this.id = id;
+    public Course() {}
+
+    public Course(String title, String courseCode) {
         this.title = title;
         this.courseCode = courseCode;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
